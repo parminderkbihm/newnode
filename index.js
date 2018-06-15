@@ -8,6 +8,13 @@ console.log('hello from server');
  res.end("hello  ");
 
 });
+
+
+app.listen(port);
+console.log('Server Listening at port'+port);
+
+
+
 //start mysql connection
 var connection = mysql.createConnection({
   host: 'kbihm.com', //mysql database host name
@@ -22,12 +29,6 @@ connection.connect(function (err) {
   console.log('You are now connected with mysql database...');
   res.end('connected');
 })
-
-
-app.listen(port);
-console.log('Server Listening at port'+port);
-
-
 
 
 
