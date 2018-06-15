@@ -7,8 +7,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/',function(req,res){
 console.log('hello from server');
+res.render('./public/index.html');
 
- res.end('hello node');
 });
 
 app.listen(port);
