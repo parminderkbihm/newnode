@@ -13,10 +13,7 @@ console.log('hello from server');
                 <input type="text" name="fname" /><br />
                 <input type="number" name="age" /><br />
                 <input type="file" name="photo" /><br />
- <input type="file" name="photo" /><br />
 
- <input type="file" name="photo" /><br />
- <input type="file" name="photo" /><br />
         
             </form>
         </body>
