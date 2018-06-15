@@ -1,18 +1,45 @@
-var http = require("http");
-var express = require('express');
-var app = express();
-var mysql = require('mysql');
-var bodyParser = require('body-parser');
-var url = require('url');
-var port=process.env.PORT || 3000;
-app.get('/',function(req,res){
-  console.log('hello from server');
-   res.end("hello node server kbihm");
-  
-  });
 
-  app.listen(port);
+var express =require('express');
+var app = express();
+var port=process.env.PORT || 3000;
+
+
+app.get('/',function(req,res){
+console.log('hello from server');
+ res.end("hello server ");
+
+});
+
+app.listen(port);
 console.log('Server Listening at port'+port);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var http = require("http");
+// var express = require('express');
+// var app = express();
+// var mysql = require('mysql');
+// var bodyParser = require('body-parser');
+// var url = require('url');
+
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//    res.end("hello node server kbihm");
+  
+//   });
+
+//   app.listen(port);
+// console.log('Server Listening at port'+port);
 /*
 //start mysql connection
 var connection = mysql.createConnection({
