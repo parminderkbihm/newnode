@@ -7,7 +7,19 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/',function(req,res){
 console.log('hello from server');
-res.render('./public/index.html');
+ res.end(`
+        <!doctype html>
+        <html>
+        <body>
+            <form action="/" method="post">
+                <input type="text" name="fname" /><br />
+                <input type="number" name="age" /><br />
+                <input type="file" name="photo" /><br />
+                <button>Save</button>
+            </form>
+        </body>
+        </html>
+    `);
 
 });
 
