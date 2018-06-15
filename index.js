@@ -1,4 +1,3 @@
-
 var express =require('express');
 var app = express();
 var port=process.env.PORT || 3000;
@@ -24,23 +23,14 @@ console.log('Server Listening at port'+port);
 
 
 
-
-// var http = require("http");
-// var express = require('express');
-// var app = express();
-// var mysql = require('mysql');
-// var bodyParser = require('body-parser');
-// var url = require('url');
-
-// app.get('/',function(req,res){
-//   console.log('hello from server');
-//    res.end("hello node server kbihm");
-  
-//   });
-
-//   app.listen(port);
-// console.log('Server Listening at port'+port);
 /*
+var http = require("http");
+var express = require('express');
+var app = express();
+var mysql = require('mysql');
+var bodyParser = require('body-parser');
+var url = require('url');
+
 //start mysql connection
 var connection = mysql.createConnection({
   host: 'localhost', //mysql database host name
@@ -68,25 +58,8 @@ var server = app.listen(4000, "127.0.0.1", function () {
   console.log("Example app listening at http://%s:%s", hostAddress, portNo)
 });
 
-//var server = app.listen(4000, "127.0.0.1", function () {
-  //var hostAddress = server.address().address
-  //var portNo = server.address().port
-  //console.log("Example app listening at http://%s:%s", hostAddress, portNo)
 
-//});
-// get All AddEmployee Table Api .subscribe(res => {
-/*
-  app.get('/employee', f .subscribe(res => {
-       // debugger
-    connection.query('se .subscribe(res => {
-       // debuggerr, results, fields) {
-     if (error) throw error;
-     res.end(JSON.stringify(results));
-   });
-  });
-*/
-/*
-//Add nem Emoployee
+//Add new Emoployee
 app.post('/employee', function (req, res) {
     var params = req.body;
     console.log(params);
@@ -165,8 +138,6 @@ app.post('/admin', function (req, res) {
           var attendenceid = (result1[0].EmployeeId);
           var Attendencedate = (result1[0].currentdate);
           var imei = (result1[0].IMEI);
-         // var logintime = (result1[0].LoginTime);
-         // var louttime = (result1[0].LogoutTime);
         
           var new_attendence_date = Attendencedate.getFullYear() + "-" + (Attendencedate.getMonth() + 1) + "-" + Attendencedate.getDate();
           console.log(new_attendence_date);
@@ -197,7 +168,4 @@ app.post('/attendencecheck', function (req, res) {
       res.end(null);
   });
 });
-
-
-
 */
