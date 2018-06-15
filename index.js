@@ -5,7 +5,7 @@ var port=process.env.PORT || 3000;
 
 app.get('/',function(req,res){
 console.log('hello from server');
- res.end("hello  ");
+ res.end("hello u ");
 
 });
 
@@ -17,11 +17,11 @@ console.log('Server Listening at port'+port);
 
 //start mysql connection
 var connection = mysql.createConnection({
-  host: 'kbihm.com',
+  host: 'kbihm.com',    //mysql database name
   database: 'kbihmcheckdb', //mysql database host name
   user: 'kbihmcheckdb', //mysql database user name
   password: '%lUy@Gl(&*2wlP' //mysql database password
-  //mysql database name
+ 
 });
 
 
