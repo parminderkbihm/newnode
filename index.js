@@ -3,6 +3,16 @@ var app = express();
 var port=process.env.PORT || 3000;
 
 
+app.get('/',function(req,res){
+console.log('hello from server');
+ res.end("hello server ");
+
+});
+
+app.listen(port);
+console.log('Server Listening at port'+port);
+
+
 //  //start mysql connection
 //  var connection = mysql.createConnection({
 //   host: 'kbihm.com', 
@@ -18,17 +28,6 @@ var port=process.env.PORT || 3000;
 //   console.log('You are  connected with mysql database.........');
 
 // })
-
-app.get('/',function(req,res){
-console.log('hello from server');
- res.end("hello user1");
-
-
-});
-
-
-app.listen(port);
-console.log('Server Listening at port'+port);
 
 
 
