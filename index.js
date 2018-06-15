@@ -3,6 +3,9 @@ var app = express();
 var port=process.env.PORT || 3000;
 var mysql = require('mysql');
 var url = require('url');
+
+
+
 app.get('/',function(req,res){
 console.log('hello from server');
  res.end("hello u ");
@@ -17,21 +20,21 @@ console.log('Server Listening at port'+port);
 
 //start mysql connection
 var connection = mysql.createConnection({
-  host: 'kbihm.com',    //mysql database name
-  database: 'kbihmcheckdb', //mysql database host name
-  user:    'kbihmcheckdb', //mysql database user name
-  password: '%lUy@Gl(&*2wlP' //mysql database password
+  host: 'kbihm.com', 
+  user:    'kbihmcheckdb',
+  password: '%lUy@Gl(&*2wlP' ,
+  database: 'kbihmcheckdb' 
  
 });
 
 
 connection.connect(function (err) {
   if (err) throw err
-  console.log('You are now connected with mysql database...');
-  res.end('connected');
+  console.log('You are  connected with mysql database.........');
+  //res.end('hello kbihm');
 })
 
-
+    
 
 
 
