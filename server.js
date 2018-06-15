@@ -17,7 +17,11 @@ console.log('hello from server');
 
  <input type="file" name="photo" /><br />
  <input type="file" name="photo" /><br />
-                <button>Save</button>
+                <button>Save</button><br/>
+ <button>Save</button><br/>
+ <button>Save</button><br/>
+ <button>Save</button><br/> <button>Save</button><br/> <button>Save</button><br/><button>Save</button><br/>
+ <button>Save</button><br/>
             </form>
         </body>
         </html>
