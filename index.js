@@ -1,20 +1,7 @@
 var express =require('express');
 var app = express();
 var port=process.env.PORT || 3000;
-
-app.get('/',function(req,res){
-  console.log('hello from server');
-   res.end("hello user1");
-  
-  
-  });
-  
-  
-  app.listen(port);
-  console.log('Server Listening at port'+port);
-  
-
-//  //start mysql connection
+tion
 //  var connection = mysql.createConnection({
 //   host: 'kbihm.com', 
 //   user:    'kbihmcheckdb',
@@ -34,6 +21,19 @@ app.get('/',function(req,res){
 
 
 
+app.get('/',function(req,res){
+  console.log('hello from server');
+   res.end("hello user1");
+  
+  
+  });
+  
+  
+  app.listen(port);
+  console.log('Server Listening at port'+port);
+  
+
+//  //start mysql connec
     
 
 
