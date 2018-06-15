@@ -2,7 +2,7 @@
   "name": "demonodeproject",
   "version": "1.0.0",
   "description": "writing first node app",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.14.0"
   },
