@@ -23,7 +23,7 @@ tion
 
 app.get('/',function(req,res){
   console.log('hello from server');
-   res.end("hello user1");
+   res.end("hello");
   
   
   });
