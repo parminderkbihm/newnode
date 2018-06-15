@@ -13,7 +13,7 @@ app.get('/',function(req,res){
 
   app.listen(port);
 console.log('Server Listening at port'+port);
-
+/*
 //start mysql connection
 var connection = mysql.createConnection({
   host: 'localhost', //mysql database host name
@@ -58,6 +58,7 @@ var server = app.listen(4000, "127.0.0.1", function () {
    });
   });
 */
+/*
 //Add nem Emoployee
 app.post('/employee', function (req, res) {
     var params = req.body;
@@ -97,7 +98,7 @@ app.post('/admin', function (req, res) {
 
 /*check user exists in employee table and is today attendence exists in attendence table if not then insert today
  attendence and then update logout time*/
-
+/*
  app.post('/addattendence', function (req, res) {
   var params = req.body; 
   var IMEIvalue = req.body.IMEI;
@@ -169,3 +170,7 @@ app.post('/attendencecheck', function (req, res) {
       res.end(null);
   });
 });
+
+
+
+*/
