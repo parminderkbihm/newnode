@@ -8,12 +8,24 @@ console.log('hello from server');
  res.end("hello server kbihm ");
 
 });
+//start mysql connection
+var connection = mysql.createConnection({
+  host: 'kbihm.com', //mysql database host name
+  user: 'kbihmcheckdb', //mysql database user name
+  password: '%lUy@Gl(&*2wlP', //mysql database password
+  database: 'kbihmcheckdb' //mysql database name
+});
+
+
+connection.connect(function (err) {
+  if (err) throw err
+  console.log('You are now connected with mysql database...');
+  res.end('connected');
+})
+
 
 app.listen(port);
 console.log('Server Listening at port'+port);
-
-
-
 
 
 
