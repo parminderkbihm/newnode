@@ -2,6 +2,7 @@ var express =require('express');
 var app = express();
 var mysql=require('mysql')
 var port=process.env.PORT || 3000;
+var http = require('http');
 //var bodyParser = require('body-parser');
 
 var connection = mysql.createConnection({
@@ -17,11 +18,11 @@ connection.connect(function (err) {
 })
 
 
-app.get('/',function(req,res){
-  console.log('hello from server');
-  res.end("hello user1");
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//   res.end("hello user1");
  
-  });
+//   });
   // app.listen(port);
   // console.log('Server Listening at port'+port);
   
@@ -30,12 +31,16 @@ app.get('/',function(req,res){
 //   extended: true
 // }));
 
-var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
-  var hostAddress = server.address().address
-  var portNo = server.address().port
-  console.log("Example app listening at http://%s:%s", hostAddress, portNo)
-});
+// var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
+//   var hostAddress = server.address().address
+//   var portNo = server.address().port
+//   console.log("Example app listening at http://%s:%s", hostAddress, portNo)
+// });
 
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!');
+}).listen(port,"https://nodewebapplication.azurewebsites.net/");
 
 
 
