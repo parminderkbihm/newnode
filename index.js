@@ -22,19 +22,19 @@ app.get('/',function(req,res){
   res.end("hello user1");
  
   });
-  app.listen(port);
-  console.log('Server Listening at port'+port);
+  // app.listen(port);
+  // console.log('Server Listening at port'+port);
   
 // app.use(bodyParser.json());       // to support JSON-encoded bodies
 // app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 //   extended: true
 // }));
 
-// var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
-//   var hostAddress = server.address().address
-//   var portNo = server.address().port
-//   console.log("Example app listening at http://%s:%s", hostAddress, portNo)
-// });
+var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
+  var hostAddress = server.address().address
+  var portNo = server.address().port
+  console.log("Example app listening at http://%s:%s", hostAddress, portNo)
+});
 
 
 
