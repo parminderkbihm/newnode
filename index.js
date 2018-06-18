@@ -1,6 +1,6 @@
 var express =require('express');
 var app = express();
-
+var mysql=require('mysql');
 var port=process.env.PORT || 3000;
 
 
@@ -11,17 +11,18 @@ app.get('/',function(req,res){
   });
   app.listen(port);
   console.log('Server Listening at port'+port);
-// var connection = mysql.createConnection({
-//   host: 'kbihm.com', 
-//   user:    'kbihmcheckdb',
-//   password: '%lUy@Gl(&*2wlP' ,
-//   database: 'kbihmcheckdb' 
- 
-// });
-// connection.connect(function (err) {
-//   if (err) throw err
-//   console.log('You are now connected with mysql database...')
-// })
+
+  var connection = mysql.createConnection({
+  host: 'kbihm.com', 
+  user:    'kbihmcheckdb',
+  password: '%lUy@Gl(&*2wlP',
+  database: 'kbihmcheckdb' 
+});
+
+connection.connect(function (err) {
+  if (err) throw err
+  console.log('You are now connected with mysql database...')
+})
 
 
   
