@@ -1,7 +1,7 @@
 var express =require('express');
 var app = express();
 var port=process.env.PORT || 3000;
-var mysql =require('mysql')
+
 
 app.get('/',function(req,res){
   console.log('hello from server');
