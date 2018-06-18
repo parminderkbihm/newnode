@@ -5,8 +5,8 @@ var port=process.env.PORT || 3000;
 
 app.get('/',function(req,res){
   console.log('hello from server');
+  res.write('browser')
   res.end("hello");
- 
   });
   app.listen(port);
   console.log('Server Listening at port'+port);
@@ -17,9 +17,9 @@ app.get('/',function(req,res){
 //   user:    'kbihmcheckdb',
 //   password: '%lUy@Gl(&*2wlP',
 //   database: 'kbihmcheckdb',
-  
-
 // });
+
+
 // connection.connect(function (err) {
 //   if (err) throw err
 //   else
