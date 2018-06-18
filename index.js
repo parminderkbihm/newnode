@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/', function (req, res) {
   connection.query('select * from Attendence', function (error, results, fields) {
     if (error) throw error;
-    res.end(JSON.stringify(results));
-    res.end("hello user1");
+   // res.end(JSON.stringify(results));
+    res.end("hello user2");
   });
 });
 
