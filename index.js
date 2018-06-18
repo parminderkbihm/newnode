@@ -1,9 +1,8 @@
 var express =require('express');
 var app = express();
-var mysql=require('mysql')
+
 var port=process.env.PORT || 3000;
-var http = require('http');
-//var bodyParser = require('body-parser');
+
 
 app.get('/',function(req,res){
   console.log('hello from server');
