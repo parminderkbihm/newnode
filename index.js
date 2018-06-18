@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 //   res.end("hello user1");
  
   // });
-  app.listen(port);
+  app.listen(port,"https://nodewebapplication.azurewebsites.net/");
   console.log('Server Listening at port'+port);
 
   var connection = mysql.createConnection({
