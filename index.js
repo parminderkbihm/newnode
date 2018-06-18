@@ -1,7 +1,7 @@
 var express =require('express');
 var app = express();
 var port=process.env.PORT || 3000;
-
+var mysql =require('mysql')
 
 app.get('/',function(req,res){
   console.log('hello from server');
@@ -13,10 +13,12 @@ app.get('/',function(req,res){
 
 
   var connection = mysql.createConnection({
-  server: 'kbihm.com', 
+  host: 'kbihm.com', 
   user:    'kbihmcheckdb',
   password: '%lUy@Gl(&*2wlP',
-  database: 'kbihmcheckdb',
+  
+  options: {encrypt: true, database: 'kbihmcheckdb'} 
+
 });
 
 
