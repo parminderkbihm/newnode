@@ -2,44 +2,42 @@ var express =require('express');
 var app = express();
 var mysql=require('mysql');
 var port=process.env.PORT || 3000;
-var bodyParser = require('body-parser')
-
-app.use(bodyParser.json());       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
 
 
-app.get('/', function (req, res) {
-  connection.query('select * from Attendence', function (error, results, fields) {
-    if (error) throw error;
-   // res.end(JSON.stringify(results));
-    res.end("hello user2");
-  });
-});
+// app.get('/', function (req, res) {
+//   connection.query('select * from Attendence', function (error, results, fields) {
+//     if (error) throw error;
+//     res.end(JSON.stringify(results));
+//     res.end("hello user222");
+//   });
+// });
 
-// app.get('/',function(req,res){
-//   console.log('hello from server');
-//   res.end("hello user1");
+app.get('/',function(req,res){
+  console.log('hello from server');
+  res.end("hello user123");
  
-  // });
-  app.listen(port,"https://nodewebapplication.azurewebsites.net/");
+  });
+  app.listen(port);
   console.log('Server Listening at port'+port);
 
-  var connection = mysql.createConnection({
-  host: 'kbihm.com', 
-  user:    'kbihmcheckdb',
-  password: '%lUy@Gl(&*2wlP',
-  database: 'kbihmcheckdb' 
-});
+//   var connection = mysql.createConnection({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP',
+//   database: 'kbihmcheckdb' 
+// });
 
-connection.connect(function (err) {
-  if (err) throw err
-  console.log('You are now connected with mysql database...')
-})
+// connection.connect(function (err) {
+//   if (err) throw err
+//   console.log('You are now connected with mysql database...')
+// })
 
 
   
+// app.use(bodyParser.json());       // to support JSON-encoded bodies
+// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+//   extended: true
+// }));
 
 // var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
 //   var hostAddress = server.address().address
