@@ -4,16 +4,16 @@ var app = express();
 var mysql=require('mysql')
 var port=process.env.PORT || 3000;
 
-app.get('/',function(req,res){
-  console.log('hello from server');
-  res.end("hello user1");
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//   res.end("hello user1");
  
-  });
+//   });
   
   app.listen(port);
   console.log('Server Listening at port'+port);
   
-app.get('/hello',function(){
+app.get('/',function(req,res){
 //start mysql connection
 var connection = mysql.createConnection({
   host: 'kbihm.com', 
@@ -26,10 +26,10 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
   if (err) throw err
   console.log('You are  connected with mysql database.........');
-
+res.end('connected');
 })
 
-})
+});
 
 
 
