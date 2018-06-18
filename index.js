@@ -12,20 +12,20 @@ app.get('/',function(req,res){
   console.log('Server Listening at port'+port);
 
 
-//   var connection = mysql.createConnection({
-//   host: 'kbihm.com', 
-//   user:    'kbihmcheckdb',
-//   password: '%lUy@Gl(&*2wlP',
-//   database: 'kbihmcheckdb',
-// });
+  var connection = mysql.createConnection({
+  server: 'kbihm.com', 
+  user:    'kbihmcheckdb',
+  password: '%lUy@Gl(&*2wlP',
+  database: 'kbihmcheckdb',
+});
 
 
-// connection.connect(function (err) {
-//   if (err) throw err
-//   else
-//   console.log('You are now connected with mysql database...');
+connection.connect(function (err) {
+  if (err) throw err
+  else
+  console.log('You are now connected with mysql database...');
 
-// })
+})
 
 
 // var pool = mysql.createPool({
