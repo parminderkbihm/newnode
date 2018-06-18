@@ -5,7 +5,7 @@ var port=process.env.PORT || 3000;
 
 app.get('/',function(req,res){
   console.log('hello from server');
-  res.end("hello user123");
+  res.end("hello user");
  
   });
   app.listen(port);
