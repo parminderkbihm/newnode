@@ -2,13 +2,27 @@ var express =require('express');
 var app = express();
 var mysql=require('mysql');
 var port=process.env.PORT || 3000;
+var bodyParser = require('body-parser')
+
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 
-app.get('/',function(req,res){
-  console.log('hello from server');
-  res.end("hello user1");
- 
+app.get('/', function (req, res) {
+  connection.query('select * from Attendence', function (error, results, fields) {
+    if (error) throw error;
+    res.end(JSON.stringify(results));
+    res.end("hello user1");
   });
+});
+
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//   res.end("hello user1");
+ 
+  // });
   app.listen(port);
   console.log('Server Listening at port'+port);
 
@@ -26,10 +40,6 @@ connection.connect(function (err) {
 
 
   
-// app.use(bodyParser.json());       // to support JSON-encoded bodies
-// app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-//   extended: true
-// }));
 
 // var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
 //   var hostAddress = server.address().address
