@@ -4,19 +4,6 @@ var mysql=require('mysql');
 var port=process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 
-var pool = mysql.createPool({
-  host: 'kbihm.com', 
-  user:    'kbihmcheckdb',
-  password: '%lUy@Gl(&*2wlP',
-  database: 'kbihmcheckdb',
-});
-
-pool.getConnection(function(err,connection){
-
-pool.query('select * from Attendence',function(err,rows){
-  console.log(rows)
-});
-});
 app.get('/',function(req,res){
   console.log('hello from server');
   res.end("hello user");
@@ -25,17 +12,66 @@ app.get('/',function(req,res){
   app.listen(port);
   console.log('Server Listening at port'+port);
 
+
+//   var connection = mysql.createConnection({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP',
+//   database: 'kbihmcheckdb',
   
-app.use(bodyParser.json());     
-app.use(bodyParser.urlencoded({     
-  extended: true
-}));
+
+// });
+// connection.connect(function (err) {
+//   if (err) throw err
+//   else
+//   console.log('You are now connected with mysql database...');
+
+// })
 
 
 
-pool.on('connection',function(connection){
-  console.log('logged open');
-});
+
+
+
+
+
+
+
+
+
+
+// var pool = mysql.createPool({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP',
+//   database: 'kbihmcheckdb',
+// });
+
+// pool.getConnection(function(err,connection){
+
+// pool.query('select * from Attendence',function(err,rows){
+//   console.log(rows)
+// });
+// });
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//   res.end("hello user");
+ 
+//   });
+//   app.listen(port);
+//   console.log('Server Listening at port'+port);
+
+  
+// app.use(bodyParser.json());     
+// app.use(bodyParser.urlencoded({     
+//   extended: true
+// }));
+
+
+
+// pool.on('connection',function(connection){
+//   console.log('logged open');
+// });
 
 
 // app.get('/attendencedetail', function (req, res) {
@@ -92,6 +128,9 @@ pool.on('connection',function(connection){
 //   res.end('Hello World!');
 // }).listen(port,"127.0.0.1");
 
+
+
+//code project
 
 
 
