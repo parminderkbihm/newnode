@@ -1,20 +1,9 @@
 var express =require('express');
 var app = express();
-
 var mysql=require('mysql')
 var port=process.env.PORT || 3000;
+var bodyParser = require('body-parser');
 
-// app.get('/',function(req,res){
-//   console.log('hello from server');
-//   res.end("hello user1");
- 
-//   });
-  
-  app.listen(port);
-  console.log('Server Listening at port'+port);
-  
-app.get('/',function(req,res){
-//start mysql connection
 var connection = mysql.createConnection({
   host: 'kbihm.com', 
   user:    'kbihmcheckdb',
@@ -22,19 +11,65 @@ var connection = mysql.createConnection({
   database: 'kbihmcheckdb' 
  
 });
-
 connection.connect(function (err) {
   if (err) throw err
-  console.log('You are  connected with mysql database.........');
-res.end('connected');
+  console.log('You are now connected with mysql database...')
 })
 
+
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+
+var server = app.listen(port, "https://nodewebapplication.azurewebsites.net/", function () {
+  var hostAddress = server.address().address
+  var portNo = server.address().port
+  console.log("Example app listening at http://%s:%s", hostAddress, portNo)
 });
 
 
 
-    
 
+
+
+
+
+
+
+// app.get('/',function(req,res){
+//   console.log('hello from server');
+//   res.end("hello user1");
+ 
+//   });
+  
+//   app.listen(port);
+//   console.log('Server Listening at port'+port);
+  
+
+
+//  var connection = mysql.createConnection({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP' ,
+//   database: 'kbihmcheckdb' 
+ 
+// });
+
+// connection.connect(function (err) {
+//   if (err) throw err
+//   console.log('You are  connected with mysql database.........');
+
+// })
+
+    
+// var connection = mysql.createConnection({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP' ,
+//   database: 'kbihmcheckdb' 
+ 
+// });
 
 
 
