@@ -17,7 +17,7 @@ app.get('/',function(req,res){
   user:    'kbihmcheckdb',
   password: '%lUy@Gl(&*2wlP',
   
-  options: {encrypt: true, database: 'kbihmcheckdb'} 
+   database: 'kbihmcheckdb'
 
 });
 
