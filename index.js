@@ -1,6 +1,5 @@
 var express =require('express');
 var app = express();
-
 var port=process.env.PORT || 3000;
 
 
@@ -27,17 +26,6 @@ app.get('/',function(req,res){
 //   console.log('You are now connected with mysql database...');
 
 // })
-
-
-
-
-
-
-
-
-
-
-
 
 
 // var pool = mysql.createPool({
