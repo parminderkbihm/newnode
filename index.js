@@ -2,7 +2,7 @@ var express =require('express');
 var app = express();
 var mysql=require('mysql');
 var port=process.env.PORT || 3000;
-
+var bodyParser = require('body-parser');
 app.get('/',function(req,res){
   console.log('hello from server');
   res.end("hello user");
@@ -10,6 +10,12 @@ app.get('/',function(req,res){
   });
   app.listen(port);
   console.log('Server Listening at port'+port);
+
+  
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
   var pool = mysql.createPool({
   host: 'kbihm.com', 
@@ -21,14 +27,19 @@ app.get('/',function(req,res){
 pool.getConnection(function(err,connection){
 
 pool.query('select * from Attendence',function(err,rows){
-
   console.log(rows)
 });
 });
+
 pool.on('connection',function(connection){
   console.log('logged open');
 });
-
+app.get('/attendencedetail', function (req, res) {
+  pool.query('select * from Attendence', function (error, results, fields) {
+    if (error) throw error;
+    res.end(JSON.stringify(results));
+  });
+});
 
 
 //   var connection = mysql.createConnection({
