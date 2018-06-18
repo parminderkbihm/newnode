@@ -5,6 +5,13 @@ var port=process.env.PORT || 3000;
 var http = require('http');
 //var bodyParser = require('body-parser');
 
+app.get('/',function(req,res){
+  console.log('hello from server');
+  res.end("hello user1");
+ 
+  });
+  app.listen(port);
+  console.log('Server Listening at port'+port);
 // var connection = mysql.createConnection({
 //   host: 'kbihm.com', 
 //   user:    'kbihmcheckdb',
@@ -18,13 +25,6 @@ var http = require('http');
 // })
 
 
-app.get('/',function(req,res){
-  console.log('hello from server');
-  res.end("hello user1");
- 
-  });
-  app.listen(port);
-  console.log('Server Listening at port'+port);
   
 // app.use(bodyParser.json());       // to support JSON-encoded bodies
 // app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
