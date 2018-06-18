@@ -3,6 +3,13 @@ var app = express();
 //var mysql=require('mysql');
 var port=process.env.PORT || 3000;
 
+app.get('/',function(req,res){
+  console.log('hello from server');
+  res.end("hello user123");
+ 
+  });
+  app.listen(port);
+  console.log('Server Listening at port'+port);
 
 // app.get('/', function (req, res) {
 //   connection.query('select * from Attendence', function (error, results, fields) {
@@ -12,13 +19,6 @@ var port=process.env.PORT || 3000;
 //   });
 // });
 
-app.get('/',function(req,res){
-  console.log('hello from server');
-  res.end("hello user123");
- 
-  });
-  app.listen(port);
-  console.log('Server Listening at port'+port);
 
 //   var connection = mysql.createConnection({
 //   host: 'kbihm.com', 
