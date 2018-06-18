@@ -13,9 +13,9 @@ app.get('/',function(req,res){
   app.listen(port);
   console.log('Server Listening at port'+port);
   
-
+app.get('/hello',function(){
 //start mysql connection
- var connection = mysql.createConnection({
+var connection = mysql.createConnection({
   host: 'kbihm.com', 
   user:    'kbihmcheckdb',
   password: '%lUy@Gl(&*2wlP' ,
@@ -26,6 +26,8 @@ app.get('/',function(req,res){
 connection.connect(function (err) {
   if (err) throw err
   console.log('You are  connected with mysql database.........');
+
+})
 
 })
 
