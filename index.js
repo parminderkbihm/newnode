@@ -11,26 +11,43 @@ app.get('/',function(req,res){
   app.listen(port);
   console.log('Server Listening at port'+port);
 
-
-
-
-  var connection = mysql.createConnection({
+  var pool = mysql.createPool({
   host: 'kbihm.com', 
   user:    'kbihmcheckdb',
   password: '%lUy@Gl(&*2wlP',
   database: 'kbihmcheckdb',
+});
+
+pool.getConnection(function(err,connection){
+
+pool.query('select * from Attendence',function(err,rows){
+
+  console.log(rows)
+});
+});
+pool.on('connection',function(connection){
+  console.log('logged open');
+});
+
+
+
+//   var connection = mysql.createConnection({
+//   host: 'kbihm.com', 
+//   user:    'kbihmcheckdb',
+//   password: '%lUy@Gl(&*2wlP',
+//   database: 'kbihmcheckdb',
   
 
-});
+// });
 
     
 
-connection.connect(function (err) {
-  if (err) throw err
-  else
-  console.log('You are now connected with mysql database...');
+// connection.connect(function (err) {
+//   if (err) throw err
+//   else
+//   console.log('You are now connected with mysql database...');
 
-})
+// })
 
 
 // app.get('/', function (req, res) {
