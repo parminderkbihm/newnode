@@ -16,7 +16,7 @@ var connection = mysql.createConnection
    });
   
 connection.connect(function (err) {
-    if (err) throw err
+    if (err) throw err;
     console.log('You are now connected with mysql database...')
   })
 
@@ -30,7 +30,7 @@ connection.connect(function (err) {
 app.get('/',function(req,res){
     // connection.query('select * from Attendence',function(error, results, fields){
     // res.write(JSON.stringify(results))
-        res.end('he');
+        res.end('he;lo');
     
 //   });
 });
