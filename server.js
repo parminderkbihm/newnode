@@ -30,7 +30,7 @@ var connection = mysql.createConnection
 app.get('/',function(req,res){
     // connection.query('select * from Attendence',function(error, results, fields){
     // res.write(JSON.stringify(results))
-        res.end('hellooooooo');
+        res.end('hello');
     
 //   });
 });
