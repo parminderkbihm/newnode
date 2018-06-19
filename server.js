@@ -7,7 +7,7 @@ var port=process.env.PORT || 3000;
 
 app.get('/',function(req,res){
     // connection.query('select * from Attendence',function(error, results, fields){
-    res.end(JSON.stringify(results))
+    res.end('hello')
     // });
 });
 app.listen(port)
