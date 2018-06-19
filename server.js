@@ -31,7 +31,7 @@ connection.connect(function (err) {
 
 app.get('/',function(req,res){
     connection.query('select * from Attendence',function(error, results, fields){
-    res.end(results)
+    res.end(JSON.stringify(results))
     });
 });
 app.listen(port)
