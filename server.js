@@ -22,17 +22,17 @@ connection.connect(function (err) {
 
 
 
-//    app.use(bodyParser.json());       // to support JSON-encoded bodies
-//    app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-//      extended: true
-//    }));
+   app.use(bodyParser.json());       // to support JSON-encoded bodies
+   app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+     extended: true
+   }));
 
 app.get('/',function(req,res){
-    // connection.query('select * from Attendence',function(error, results, fields){
-    // res.write(JSON.stringify(results))
-        res.end('he;lo');
+    connection.query('select * from Attendence',function(error, results, fields){
+    res.write(JSON.stringify(results))
+        res.end('hello');
     
-//   });
+  });
 });
 app.listen(port)
 console.log('Server Listening at port'+port);
